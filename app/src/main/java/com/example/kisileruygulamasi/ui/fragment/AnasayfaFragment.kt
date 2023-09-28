@@ -20,7 +20,10 @@ import com.example.kisileruygulamasi.databinding.FragmentAnasayfaBinding
 import com.example.kisileruygulamasi.ui.adapter.KisilerAdapter
 import com.example.kisileruygulamasi.ui.viewmodel.AnasayfaViewModel
 import com.example.kisileruygulamasi.ui.viewmodel.KisiKayitViewModel
+import com.example.kisileruygulamasi.utils.gecisYap
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AnasayfaFragment : Fragment() {
     private lateinit var binding: FragmentAnasayfaBinding
     private lateinit var viewModel: AnasayfaViewModel
@@ -40,7 +43,7 @@ class AnasayfaFragment : Fragment() {
         }
 
         binding.fab.setOnClickListener {
-            Navigation.findNavController(it).navigate(kisiKayitGecis)
+            Navigation.gecisYap(it,R.id.kisiKayitGecis)
         }
         binding.searchView.setOnQueryTextListener(object : OnQueryTextListener{
             override fun onQueryTextChange(newText: String?): Boolean {
