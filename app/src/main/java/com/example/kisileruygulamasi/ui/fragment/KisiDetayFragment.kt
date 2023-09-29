@@ -39,6 +39,6 @@ class KisiDetayFragment : Fragment() {
         viewModel = tempViewModel
     }
     fun btnGuncelle(kisi_id: Int,kisi_ad : String,  kisi_tel: String){
-        Log.e("Kişi Güncelle", "$kisi_id - $kisi_ad - $kisi_tel")
+        viewModel.kisiGuncelle(kisi_id,kisi_ad,kisi_tel)
     }
 }
